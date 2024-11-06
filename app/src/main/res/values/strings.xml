@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">ArtSpaceApp</string>
+    <string name="art_title_1">Impression, Sunrise</string>
+    <string name="art_artist_name_1">Claude Monet</string>
+    <string name="art_year_1">1872</string>
+    <string name="art_title_2">Danae</string>
+    <string name="art_artist_name_2">Artemisia Gentileschi</string>
+    <string name="art_year_2">1612</string>
+    <string name="art_title_3">Jael and Sisera</string>
+    <string name="art_artist_name_3">Artemisia Gentileschi</string>
+    <string name="art_year_3">1620</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
 </resources>
