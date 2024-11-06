@@ -1,6 +1,7 @@
 package com.example.artspaceapp
 
 import android.app.Activity
+import android.content.res.Configuration
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -30,6 +31,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
+import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -54,6 +56,7 @@ class MainActivity : ComponentActivity() {
                     2 -> Color(0xffff4162)
                     else -> Color(0xff17deee)
                 }
+                val configuration = LocalConfiguration.current
 
                 SideEffect {
                     window.statusBarColor = bgColor.toArgb()
@@ -109,7 +112,10 @@ class MainActivity : ComponentActivity() {
                                 .padding(0.dp, 32.dp)
                         ) {
                             Image(
-                                modifier = Modifier.padding(32.dp, 64.dp),
+                                modifier = if (configuration.orientation == Configuration.ORIENTATION_LANDSCAPE) Modifier else Modifier.padding(
+                                    32.dp,
+                                    64.dp
+                                ),
                                 painter = painterResource(resourceId[0]),
                                 contentDescription = ""
                             )
